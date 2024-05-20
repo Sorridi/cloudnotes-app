@@ -1,4 +1,4 @@
-import "./stylesheets/main.css";
+import "./stylesheets/tailwind.css";
 
 // Everything below is just a demo. You can delete all of it.
 
