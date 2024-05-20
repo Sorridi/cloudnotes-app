@@ -501,15 +501,141 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.flex {
+  display: flex;
+}
+.h-1\/2 {
+  height: 50%;
+}
+.h-1\/3 {
+  height: 33.333333%;
+}
+.h-44 {
+  height: 11rem;
+}
+.h-9 {
+  height: 2.25rem;
+}
+.h-\[calc\(100\%-2\.25rem\)\] {
+  height: calc(100% - 2.25rem);
+}
+.h-\[calc\(100\%\/7\*6\.5\)\] {
+  height: calc(100% / 7 * 6.5);
+}
+.h-lvh {
+  height: 100lvh;
+}
+.w-1\/3 {
+  width: 33.333333%;
+}
+.w-44 {
+  width: 11rem;
+}
+.w-8\/12 {
+  width: 66.666667%;
+}
+.w-9 {
+  width: 2.25rem;
+}
+.w-9\/12 {
+  width: 75%;
+}
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-lvw {
+  width: 100lvw;
+}
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
+}
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.flex-col {
+  flex-direction: column;
+}
+.place-content-center {
+  place-content: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.self-center {
+  align-self: center;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.border-0 {
+  border-width: 0px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+.border-sky-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 132 199 / var(--tw-border-opacity));
+}
+.bg-\[\#21222C\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 34 44 / var(--tw-bg-opacity));
+}
+.bg-\[var\(--black-secondary-feels\)\] {
+  background-color: var(--black-secondary-feels);
+}
+.bg-\[var\(--gray-contaminated-feels\)\] {
+  background-color: var(--gray-contaminated-feels);
+}
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
+.bg-transparent {
+  background-color: transparent;
+}
 .p-4 {
   padding: 1rem;
 }
+.p-\[3\%\] {
+  padding: 3%;
+}
+.px-\[5\%\] {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.py-\[3\%\] {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
 .text-center {
   text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .text-4xl {
   font-size: 2.25rem;
@@ -518,4 +644,97 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.outline-0 {
+  outline-width: 0px;
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+:root {
+    --dracula-white: rgb(248, 248, 242);
+    --dracula-black: rgb(40, 42, 54);
+    --dracula-grey: rgb(65, 69, 88);
+    --dracula-purple: rgb(149, 128, 255);
+    --dracula-pink: rgb(255, 121, 198);
+    --dracula-orange: rgb(255, 184, 108);
+    --dracula-green: rgb(80, 250, 123);
+    --dracula-yellow: rgb(241, 250, 140);
+    --dracula-cyan: rgb(139, 233, 253);
+    --dracula-red: rgb(255, 85, 85);
+
+
+    /* other */
+    --gray-feels: #414558;
+    --black-feels: #21222C;
+    --white-feels: #F8F8F2;
+
+    --purple-feels: rgba(149, 128, 255);
+    --black-secondary-feels: rgba(65, 69, 88, 0.05);
+    --egg-white-feels: rgb(236, 236, 215);
+    --gray-contaminated-feels: #3a4e7a;
+}
+
+a:link {
+    color: var(--purple-feels);
+    text-decoration: underline;
+    transition: 500ms color;
+}
+
+a:link:hover {
+    color: rgba(149, 128, 255, 0.79);
+}
+
+main {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+input {
+    background-color: var(--gray-feels);
+    border-radius: 2em;
+    padding: 3% 5%;
+}
+
+input:focus {
+    outline-color: var(--purple-feels);
+}
+
+br {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+
+.no-select {
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    user-select: none;
+}
+
+.hover\:bg-blue-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
