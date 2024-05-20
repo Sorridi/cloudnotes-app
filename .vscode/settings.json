@@ -1,0 +1,11 @@
+{
+    // The following will hide the js and map files in the editor
+    "files.exclude": {
+        "package-lock.json": true,
+        "node_modules/": true,
+        "compiled/": true,
+        "temp/": true,
+        "e2e/": true,
+        "build/": true
+    }
+}
