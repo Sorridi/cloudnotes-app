@@ -21,14 +21,21 @@ class DataBase {
     public static load(file: string, title: string): void {
         const fs = require('fs');
 
-        let content = fs.readSync(file, 'utf8', (err: any, data: any) => {
-            if (err) throw err;
-            this.data = JSON.parse(data);
-        }).toString();
+        try {
+            let content = fs.readFileSync(file, 'utf8');
 
-        this.data.set(title, JSON.parse(content));
+            let parsedContent = JSON.parse(content);
 
-        this[title] = file;
-        console.log(`Loaded ${title} from ${file}: ${content}`);
+            this.data.set(title, parsedContent);
+            this[title] = file;
+
+            console.log(`Loaded ${title} from ${file}: ${content}`);
+        } catch (err) {
+            // Handle any errors that occur during reading or parsing
+            console.error(`Error loading ${title} from ${file}:`, err);
+            throw err;
+        }
     }
 }
+
+export { DataBase };

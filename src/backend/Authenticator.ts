@@ -1,3 +1,4 @@
+import { DataBase } from "./database/DataBase"
 
 interface AuthObject {
     readonly email: string;
@@ -55,3 +56,5 @@ class Authenticator {
         return authResult;
     }
 }
+
+export { Authenticator };
