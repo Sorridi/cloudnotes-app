@@ -10,6 +10,7 @@ import appMenuTemplate from "./scripts/menu/app_menu_template";
 import editMenuTemplate from "./scripts/menu/edit_menu_template";
 import devMenuTemplate from "./scripts/menu/dev_menu_template";
 import createWindow from "./scripts/helpers/window";
+import DataBase from "../app/backend/database/DataBase";
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -21,6 +22,10 @@ import env from "env";
 if (env.name !== "production") {
     const userDataPath = app.getPath("userData");
     app.setPath("userData", `${userDataPath} (${env.name})`);
+}
+
+const loadDB = () => {
+    DataBase.load("../resources/db/users.json", "AUTH");
 }
 
 const setApplicationMenu = () => {
@@ -42,6 +47,7 @@ const initIpc = () => {
 };
 
 app.on("ready", () => {
+    loadDB();
     setApplicationMenu();
     initIpc();
 
