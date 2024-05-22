@@ -61,7 +61,7 @@ app.on("ready", () => {
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, "../src/html/login.html"),
+            pathname: path.join(__dirname, "../src/html/register.html"),
             protocol: "file:",
             slashes: true
         })

@@ -29,9 +29,8 @@ export default {
                         return;
                     }
                     console.log(stdout);
+                    BrowserWindow.getFocusedWindow().webContents.reloadIgnoringCache();
                 });
-                // reload page
-                BrowserWindow.getFocusedWindow().webContents.reloadIgnoringCache();
             }
         }
     ]

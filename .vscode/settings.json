@@ -6,6 +6,8 @@
         "compiled/": true,
         "temp/": true,
         "e2e/": true,
-        "build/": true
+        "build/": true,
+        "LICENSE": true,
+        "app/": true
     }
 }

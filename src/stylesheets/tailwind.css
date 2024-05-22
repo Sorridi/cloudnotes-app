@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+    --deep-black: #000000;
+    --deep-white: #ffffff;
+
     --dracula-white: rgb(248, 248, 242);
     --dracula-black: rgb(40, 42, 54);
     --dracula-grey: rgb(65, 69, 88);
@@ -23,45 +26,4 @@
     --black-secondary-feels: rgba(65, 69, 88, 0.05);
     --egg-white-feels: rgb(236, 236, 215);
     --gray-contaminated-feels: #3a4e7a;
-}
-
-a:link {
-    color: var(--purple-feels);
-    text-decoration: underline;
-    transition: 500ms color;
-}
-
-a:link:hover {
-    color: rgba(149, 128, 255, 0.79);
-}
-
-main {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-input {
-    background-color: var(--gray-feels);
-    border-radius: 2em;
-    padding: 3% 5%;
-}
-
-input:focus {
-    outline-color: var(--purple-feels);
-}
-
-br {
-    user-select: none;
-}
-
-.no-select {
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-
-    /*
-      Introduced in IE 10.
-      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-    */
-    -ms-user-select: none;
-    user-select: none;
 }

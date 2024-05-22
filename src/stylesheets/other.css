@@ -1,0 +1,126 @@
+/* header, body, footer, fonts */
+
+body {
+    background-image: url('../assets/clouds.jpg');
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* login and register pages */
+
+.login-container {
+    text-align: center;
+    position: absolute;
+
+    background: var(--dracula-black);
+    color: var(--dracula-white);    
+
+    top: 50%;
+    left: 50%;
+    
+    padding: 5%;
+    padding-bottom: 4%;
+    margin: 0;
+    
+    height: auto;
+
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 40px var(--deep-black);
+
+    width: 40%;
+    max-width: 600px;
+}
+
+.login-container > section {
+    flex: 1;
+}
+
+.login-container > section > h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.login-container > section > form {
+    text-align: left;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.login-container > section > form > label {
+    margin-bottom: 0.5em;
+}
+
+.login-container > section > form > input {
+    margin-top: 5px;
+    margin-bottom: 1.5em;
+
+    width: 100%;
+    display: block;
+}
+
+.login-container > section > form > button {
+    background-color: var(--dracula-purple);
+    color: var(--dracula-black);
+    
+    width: 50%;
+    margin: 2.5em auto 2em;
+    padding: 2% 5%;
+    display: block;
+}
+
+.login-container > section > form > button:hover {
+    background-color: var(--dracula-pink);
+    transition: 500ms;
+}
+
+h1::after {
+    background-color: var(--dracula-grey);
+    height: 1px;
+    margin: 10px 0px;
+    display: block;
+    content: "";
+}
+
+a:link {
+    color: var(--dracula-purple);
+    text-decoration: underline;
+    transition: 500ms color;
+}
+
+a:link:hover {
+    color: var(--dracula-pink);
+}
+
+input {
+    background-color: var(--dracula-grey);
+    padding: 3% 5%;
+}
+
+input:focus {
+    outline-color: var(--dracula-purple);
+}
+
+br {
+    user-select: none;
+}
+
+.no-select {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+* {
+    box-sizing: border-box;
+    /* Let's make dealing with the sizes of elements easier. */
+}

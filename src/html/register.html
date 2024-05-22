@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CloudNotes - Login</title>
+    <title>CloudNotes - Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Davide Flore & Marco La Civita & Antonio Masala">
@@ -17,16 +17,17 @@
 <body>
     <main class="login-container no-select">
         <section>
-            <h1>Log In</h1>
-            <form action="login" method="post">
+            <h1>Register</h1>
+            <form action="register" method="post">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-                <button type="submit"><b>Log In</b></button>
+                <label for="password">Repeat password:</label>
+                <input type="password" id="password-repeat" name="password-repeat" required>
+                <button type="submit"><b>Register</b></button>
             </form>
-            <p>Need an account? <a href="register.html">Create an account</a></p>
-            <p><a href="he-forgor-password">Forgot password?</a></p>
+            <p>Already have an account? <a href="login.html">Log In</a></p>
         </section>
     </main>
 </body>
