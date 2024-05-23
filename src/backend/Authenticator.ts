@@ -49,7 +49,7 @@ class Authenticator {
         else if (authResult === undefined) {
             // @ts-ignore
             authenticated = password === authObj.password;
-            authResult = {result: authenticated, message: authenticated ? "Login successful!" : "Incorrect password!"};
+            authResult = {result: authenticated, message: authenticated ? "Login successful!" : "Incorrect E-mail or password!"};
         }
 
 

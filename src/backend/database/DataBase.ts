@@ -27,7 +27,7 @@ class DataBase {
             let parsedContent = JSON.parse(content);
 
             this.data.set(title, parsedContent);
-            this[title] = file;
+            this[title.toUpperCase()] = file;
 
             console.log(`Loaded ${title} from ${file}: ${content}`);
         } catch (err) {

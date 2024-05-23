@@ -10,7 +10,10 @@ import appMenuTemplate from "./scripts/menu/app_menu_template";
 import editMenuTemplate from "./scripts/menu/edit_menu_template";
 import devMenuTemplate from "./scripts/menu/dev_menu_template";
 import createWindow from "./scripts/helpers/window";
+
 import { DataBase } from "../app/backend/database/DataBase";
+import { Authenticator } from "../app/backend/Authenticator";
+import { EventDispatcher } from "../app/backend/EventDispatcher";
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -42,10 +45,11 @@ const setApplicationMenu = () => {
 
 // We can communicate with our window (the renderer process) via messages.
 const initIpc = () => {
-    ipcMain.on("need-app-path", (event, arg) => {
+    let med = EventDispatcher.getMain();
+    med.addListener("need-app-path", "main-e-list", (event, arg) => {
         event.reply("app-path", app.getAppPath());
     });
-    ipcMain.on("open-external-link", (event, href) => {
+    med.addListener("open-external-link", "main-e-list", (event, href) => {
         shell.openExternal(href);
     });
 };
