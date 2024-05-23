@@ -5,7 +5,7 @@
 
 import path from "path";
 import url from "url";
-import { app, Menu, ipcMain, shell } from "electron";
+import { app, Menu, shell } from "electron";
 import appMenuTemplate from "./scripts/menu/app_menu_template";
 import editMenuTemplate from "./scripts/menu/edit_menu_template";
 import devMenuTemplate from "./scripts/menu/dev_menu_template";
