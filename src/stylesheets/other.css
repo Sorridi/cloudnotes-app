@@ -151,6 +151,53 @@ body {
     margin: 10px 0px;
 }
 
+.login-container > section > form > .checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.login-container > section > form> .checkbox-container > input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--dracula-grey-lighter);
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.login-container > section > form > .checkbox-container > input[type="checkbox"]:checked {
+    background-color: var(--dracula-purple);
+    border-color: var(--dracula-purple);
+}
+
+.login-container > section > form > .checkbox-container > input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--dracula-black);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.login-container > section > form > .checkbox-container > label {
+    cursor: pointer;
+}
+
+a {
+    color: var(--dracula-purple);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--dracula-pink);
+}
+
 .blurred-background {
     background: rgba(0, 0, 0, 0.8);
 }
