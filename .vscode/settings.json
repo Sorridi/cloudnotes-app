@@ -8,6 +8,7 @@
         "e2e/": true,
         "build/": true,
         "LICENSE": true,
-        "app/": true
+        "app/": true,
+        "dist/": true,
     }
 }

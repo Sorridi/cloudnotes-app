@@ -14,23 +14,27 @@
     <link href="../stylesheets/other.css" rel="stylesheet" media="screen">
 </head>
 
-<body>
-    <main class="login-container no-select">
+<body">
+    <main class="login-container no-select blurred-background">
         <section>
-            <h1>Register</h1>
+            <div class="title">
+                <h1>CloudNotes</h1>
+            </div>
+            <div class="title-end">
+                <p>Your virtual oasis of knowledge.</p>
+            </div>
             <form action="register" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <label for="password">Repeat password:</label>
-                <input type="password" id="password-repeat" name="password-repeat" required>
-                <button type="submit"><b>Register</b></button>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="•••••••••" required>
+                <label for="password">Repeat password</label>
+                <input type="password" id="password-repeat" name="password-repeat" placeholder="•••••••••" required>
+                <button type="submit" class="encourage">CREATE AN ACCOUNT</button>
+                <button type="button" class="sneaky">Already have an account? Log In</button>
             </form>
-            <p>Already have an account? <a href="login.html">Log In</a></p>
         </section>
     </main>
-<script src="../../app/scripts/preload.js" type="text/javascript"></script>
 </body>
 
 </html>

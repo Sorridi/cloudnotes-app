@@ -66,8 +66,6 @@ app.on("ready", () => {
             // Two properties below are here for demo purposes, and are
             // security hazard. Make sure you know what you're doing
             // in your production app.
-            nodeIntegration: true,
-            contextIsolation: false,
             // Spectron needs access to remote module
             enableRemoteModule: env.name === "test"
         }
@@ -81,8 +79,28 @@ app.on("ready", () => {
         })
     );
 
+    const secondWindow = createWindow("second", {
+        width: 1000,
+        height: 600,
+        webPreferences: {
+            // Two properties below are here for demo purposes, and are
+            // security hazard. Make sure you know what you're doing
+            // in your production app.
+            // Spectron needs access to remote module
+            enableRemoteModule: env.name === "test"
+        }
+    });
+
+    secondWindow.loadURL(
+        url.format({
+            pathname: path.join(__dirname, "../src/html/login.html"),
+            protocol: "file:",
+            slashes: true
+        })
+    );
+
     if (env.name === "development") {
-        mainWindow.openDevTools();
+        // mainWindow.openDevTools();
     }
 });
 

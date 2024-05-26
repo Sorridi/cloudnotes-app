@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode vs Light Mode</title>
+    
+    <link href="../stylesheets/custom_diago.css" rel="stylesheet" media="screen">
+</head>
+
+<script>
+    document.getElementById('light-theme').addEventListener('click', () => {
+            document.getElementById('theme-preview').style.backgroundColor = 'white';
+            document.getElementById('theme-preview').style.color = 'black';
+            localStorage.setItem('theme', 'light');
+        });
+
+        document.getElementById('dark-theme').addEventListener('click', () => {
+            document.getElementById('theme-preview').style.backgroundColor = 'black';
+            document.getElementById('theme-preview').style.color = 'white';
+            localStorage.setItem('theme', 'dark');
+        });
+
+        document.getElementById('apply-btn').addEventListener('click', () => {
+            const theme = localStorage.getItem('theme');
+            document.body.className = theme;
+            document.getElementById('theme-popup').style.display = 'none';
+        });
+
+        document.getElementById('cancel-btn').addEventListener('click', () => {
+            document.getElementById('theme-popup').style.display = 'none';
+        });
+</script>
+
+<body>
+    <div id="theme-popup" class="popup">
+        <h2>Personalizza Tema</h2>
+        <p>Scegli tra il tema chiaro e il tema scuro per la tua interfaccia</p>
+        <div class="theme-options">
+            <div class="theme-option" id="light-theme">
+                <span>🌞 Chiaro</span>
+            </div>
+            <div class="theme-option" id="dark-theme">
+                <span>🌜 Scuro</span>
+            </div>
+        </div>
+        <div class="preview" id="theme-preview"></div>
+        <div class="actions">
+            <button id="apply-btn">Applica</button>
+            <button id="cancel-btn">Annulla</button>
+        </div>
+    </div>
+</body>
+
+</html>

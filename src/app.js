@@ -1,2 +1,0 @@
-import "./stylesheets/tailwind.css";
-

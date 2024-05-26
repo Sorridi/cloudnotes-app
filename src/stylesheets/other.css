@@ -8,6 +8,30 @@ body {
     background-attachment: fixed;
 }
 
+@font-face {
+    font-family: 'Bigshot One';
+    src: url('../assets/fonts/BigshotOne-Regular.ttf') format('truetype');
+}
+
+.title {
+    font-family: 'Bigshot One';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title > h1 {
+    font-size: 3.4em;
+    margin: 0;
+    font-style: italic;
+}
+
+.title > img {
+    width: 100%;
+    max-width: 80px;
+    margin: 0 10px 0 0;
+}
+
 /* login and register pages */
 
 .login-container {
@@ -20,8 +44,8 @@ body {
     top: 50%;
     left: 50%;
     
-    padding: 5%;
-    padding-bottom: 4%;
+    padding: 3% 5%;
+    padding-bottom: 3%;
     margin: 0;
     
     height: auto;
@@ -38,8 +62,9 @@ body {
 }
 
 .login-container > section > h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
+    text-align: left;
 }
 
 .login-container > section > form {
@@ -61,46 +86,73 @@ body {
     display: block;
 }
 
+
 .login-container > section > form > button {
-    background-color: var(--dracula-purple);
-    color: var(--dracula-black);
-    
-    width: 50%;
-    margin: 2.5em auto 2em;
-    padding: 2% 5%;
+    width: 100%;
+    padding: 3% 4%;
     display: block;
 }
 
-.login-container > section > form > button:hover {
-    background-color: var(--dracula-pink);
-    transition: 500ms;
+.login-container > section > form > button.encourage {
+    background-color: var(--dracula-purple);
+    color: var(--dracula-black);
+    margin: 2.5em auto 1em;
+    font-weight: bold;
 }
 
-h1::after {
+.login-container > section > form > button.sneaky {
+    color: var(--dracula-purple);
+    text-decoration: underline;
+}
+
+.login-container > section > form > button {
+    transition: 500ms;
+    border-radius: 5px;
+}
+
+.login-container > section > form > button:hover.encourage {
+    background-color: var(--dracula-pink);
+}
+
+.login-container > section > form > button:hover.sneaky {
+    background-color: var(--dracula-grey);
+    color: var(--dracula-white);
+    text-decoration: none;
+}
+
+.login-container > section > form > input {
+    background-color: var(--dracula-grey);
+    padding: 3% 4%;
+    border-radius: 5px;
+}
+
+.login-container > section > form > input:focus {
+    outline-color: var(--dracula-purple);
+}
+
+.title-end {
+    color: var(--dracula-grey-lighter);
+    font-style: italic;
+    display: block;    
+}
+
+.login-container > section > h1::after, .title-end::after {
     background-color: var(--dracula-grey);
     height: 1px;
-    margin: 10px 0px;
     display: block;
     content: "";
 }
 
-a:link {
-    color: var(--dracula-purple);
-    text-decoration: underline;
-    transition: 500ms color;
+.title-end::after {
+    margin: 5px 20% 4em 20%;
 }
 
-a:link:hover {
-    color: var(--dracula-pink);
+.login-container > section > h1::after {
+    margin: 10px 0px;
 }
 
-input {
-    background-color: var(--dracula-grey);
-    padding: 3% 5%;
-}
-
-input:focus {
-    outline-color: var(--dracula-purple);
+.blurred-background {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 br {

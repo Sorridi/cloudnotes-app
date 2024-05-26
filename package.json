@@ -26,7 +26,8 @@
         "build:css": "postcss src/stylesheets/tailwind.css -o src/stylesheets/tailwind-out.css",
         "build:typescript": "npx tsc -p tsconfig.json",
         "postinstall": "electron-builder install-app-deps",
-        "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+        "webpack": "webpack --config=build/webpack.app.config.js",
+        "release": "webpack --config=build/webpack.app.config.js --env=production && electron-builder"
     },
     "dependencies": {
         "fs-jetpack": "^5.1.0",
@@ -48,6 +49,7 @@
         "webpack": "^5.91.0",
         "webpack-cli": "^5.1.4",
         "webpack-merge": "^5.10.0",
-        "webpack-node-externals": "^3.0.0"
+        "webpack-node-externals": "^3.0.0",
+        "ts-loader": "^9.5.1"
     }
 }
