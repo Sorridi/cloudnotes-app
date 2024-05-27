@@ -501,23 +501,8 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-.p-4 {
-  padding: 1rem;
-}
-.text-center {
-  text-align: center;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.visible {
+  visibility: visible;
 }
 
 :root {
@@ -536,6 +521,9 @@ video {
     --dracula-red: rgb(255, 85, 85);
 
     /* other */
+    --dracula-grey-lighter: rgb(120, 120, 135);
+    --dracula-grey-lighter-lighter: rgb(153, 153, 162);
+
     --gray-feels: #414558;
     --black-feels: #21222C;
     --white-feels: #F8F8F2;

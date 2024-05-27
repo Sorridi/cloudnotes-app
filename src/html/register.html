@@ -14,20 +14,30 @@
     <link href="../stylesheets/other.css" rel="stylesheet" media="screen">
 </head>
 
-<body>
-    <main class="login-container no-select">
+<body">
+    <main class="login-container no-select blurred-background">
         <section>
-            <h1>Register</h1>
+            <div class="title">
+                <h1>CloudNotes</h1>
+            </div>
+            <div class="title-end">
+                <p>Your virtual oasis of knowledge.</p>
+            </div>
+            <h1 class="title-form">Create an Account</h1>
             <form action="register" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <label for="password">Repeat password:</label>
-                <input type="password" id="password-repeat" name="password-repeat" required>
-                <button type="submit"><b>Register</b></button>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="password-repeat" name="password-repeat" placeholder="Repeat Password" required>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="custom-checkbox">
+                    <label for="custom-checkbox">I've read and accept the <a href="terms-of-service.html">Terms Of Service.</a></label>
+                </div>
+
+                <button type="submit" class="encourage">CREATE AN ACCOUNT</button>
+                <a href="login.html">Already have an account? Log In</a>
             </form>
-            <p>Already have an account? <a href="login.html">Log In</a></p>
         </section>
     </main>
 </body>

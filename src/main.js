@@ -5,11 +5,15 @@
 
 import path from "path";
 import url from "url";
-import { app, Menu, ipcMain, shell } from "electron";
+import { app, Menu, shell } from "electron";
 import appMenuTemplate from "./scripts/menu/app_menu_template";
 import editMenuTemplate from "./scripts/menu/edit_menu_template";
 import devMenuTemplate from "./scripts/menu/dev_menu_template";
 import createWindow from "./scripts/helpers/window";
+
+import { DataBase } from "../app/backend/database/DataBase";
+import { Authenticator } from "../app/backend/Authenticator";
+import { EventDispatcher } from "../app/backend/EventDispatcher";
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -23,6 +27,14 @@ if (env.name !== "production") {
     app.setPath("userData", `${userDataPath} (${env.name})`);
 }
 
+const loadDB = () => {
+    DataBase.load("./resources/db/users.json", "AUTH");
+}
+
+const a = () => {
+    Authenticator.getAuthObjects(); // todo remove
+}
+
 const setApplicationMenu = () => {
     const menus = [appMenuTemplate, editMenuTemplate];
     if (env.name !== "production") {
@@ -33,15 +45,17 @@ const setApplicationMenu = () => {
 
 // We can communicate with our window (the renderer process) via messages.
 const initIpc = () => {
-    ipcMain.on("need-app-path", (event, arg) => {
+    let med = EventDispatcher.getMain();
+    med.addListener("need-app-path", "main-e-list", (event, arg) => {
         event.reply("app-path", app.getAppPath());
     });
-    ipcMain.on("open-external-link", (event, href) => {
+    med.addListener("open-external-link", "main-e-list", (event, href) => {
         shell.openExternal(href);
     });
 };
 
 app.on("ready", () => {
+    loadDB();
     setApplicationMenu();
     initIpc();
 
@@ -52,8 +66,6 @@ app.on("ready", () => {
             // Two properties below are here for demo purposes, and are
             // security hazard. Make sure you know what you're doing
             // in your production app.
-            nodeIntegration: true,
-            contextIsolation: false,
             // Spectron needs access to remote module
             enableRemoteModule: env.name === "test"
         }
@@ -67,8 +79,28 @@ app.on("ready", () => {
         })
     );
 
+    const secondWindow = createWindow("second", {
+        width: 1000,
+        height: 600,
+        webPreferences: {
+            // Two properties below are here for demo purposes, and are
+            // security hazard. Make sure you know what you're doing
+            // in your production app.
+            // Spectron needs access to remote module
+            enableRemoteModule: env.name === "test"
+        }
+    });
+
+    secondWindow.loadURL(
+        url.format({
+            pathname: path.join(__dirname, "../src/html/login.html"),
+            protocol: "file:",
+            slashes: true
+        })
+    );
+
     if (env.name === "development") {
-        mainWindow.openDevTools();
+        // mainWindow.openDevTools();
     }
 });
 

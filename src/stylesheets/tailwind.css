@@ -18,6 +18,9 @@
     --dracula-red: rgb(255, 85, 85);
 
     /* other */
+    --dracula-grey-lighter: rgb(120, 120, 135);
+    --dracula-grey-lighter-lighter: rgb(153, 153, 162);
+
     --gray-feels: #414558;
     --black-feels: #21222C;
     --white-feels: #F8F8F2;
