@@ -267,17 +267,17 @@ body {
     padding: 0 5.4% 0 5.4%;
 }
 
-.tos-container::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-.tos-container::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .95);
 }
 
-.tos-container::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: var(--dracula-grey-lighter);
-    border-radius: 4px;
 }
 
 a {
