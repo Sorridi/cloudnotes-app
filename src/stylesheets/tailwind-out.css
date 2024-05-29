@@ -504,6 +504,12 @@ video {
 .visible {
   visibility: visible;
 }
+.absolute {
+  position: absolute;
+}
+.contents {
+  display: contents;
+}
 
 :root {
     --deep-black: #000000;
@@ -511,7 +517,9 @@ video {
 
     --dracula-white: rgb(248, 248, 242);
     --dracula-black: rgb(40, 42, 54);
+    --dracula-black-2: rgb(32, 32, 32);
     --dracula-grey: rgb(65, 69, 88);
+    --dracula-grey-2: rgb(64, 64, 64);
     --dracula-purple: rgb(149, 128, 255);
     --dracula-pink: rgb(255, 121, 198);
     --dracula-orange: rgb(255, 184, 108);

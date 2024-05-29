@@ -60,44 +60,31 @@ app.on("ready", () => {
     initIpc();
 
     const mainWindow = createWindow("main", {
-        width: 1000,
-        height: 600,
+        width: 1366,
+        height: 768,
         webPreferences: {
             // Two properties below are here for demo purposes, and are
             // security hazard. Make sure you know what you're doing
             // in your production app.
             // Spectron needs access to remote module
             enableRemoteModule: env.name === "test"
-        }
+        },
+        frame: false,
+        resizable: true,
+        titleBarStyle: "hidden"
     });
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, "../src/html/register.html"),
+            pathname: path.join(__dirname, "../src/html/terms-of-service.html"),
             protocol: "file:",
             slashes: true
         })
     );
 
-    const secondWindow = createWindow("second", {
-        width: 1000,
-        height: 600,
-        webPreferences: {
-            // Two properties below are here for demo purposes, and are
-            // security hazard. Make sure you know what you're doing
-            // in your production app.
-            // Spectron needs access to remote module
-            enableRemoteModule: env.name === "test"
-        }
-    });
-
-    secondWindow.loadURL(
-        url.format({
-            pathname: path.join(__dirname, "../src/html/login.html"),
-            protocol: "file:",
-            slashes: true
-        })
-    );
+    mainWindow.setMinimumSize(1366, 768);
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.maximize();
 
     if (env.name === "development") {
         // mainWindow.openDevTools();

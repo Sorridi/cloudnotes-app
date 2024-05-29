@@ -14,8 +14,29 @@
     <link href="../stylesheets/other.css" rel="stylesheet" media="screen">
 </head>
 
-<body">
-    <main class="tos-container blurred-background">
+<body>
+    <header>
+        <div class="titlebar">
+            <h1>CloudNotes</h1>
+            <div class="titlebar-spacer"></div>
+            <div class="titlebar-search">
+                <input type="text" id="search-bar" placeholder="Search...">
+            </div>
+            <div class="titlebar-spacer"></div>
+            <div class="titlebar-buttons">
+                <button id="minimize-button">
+                    <img src="../assets/minimize-2.svg">
+                </button>
+                <button id="maximize-button">
+                    <img src="../assets/maximize.svg">
+                </button>
+                <button id="close-button">
+                    <img src="../assets/close-2.svg">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="content tos-container blurred-background">
         <section>
             <div class="title">
                 <h1>CloudNotes</h1>
@@ -876,9 +897,8 @@
                 Phone: +39 000 000 000<br>
                 Email: contact@cloudnotes.com
             </address>
-
         </section>
     </main>
-    </body>
+</body>
 
 </html>
