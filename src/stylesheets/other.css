@@ -13,7 +13,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--dracula-white);
 
-    height: 50px;
+    height: 42px;
 
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ body {
 
 .titlebar > .titlebar-search {
     display: flex;
-    width: 600px;
+    width: 500px;
     max-width: 100%;
 
     -webkit-app-region: no-drag;
@@ -44,9 +44,13 @@ body {
     color: var(--dracula-white);
 
     padding: 0 5%;
+    margin: 0 5px;
     width: 100%;
 
-    height: 35px;
+    height: 30px;
+
+    background: url(../assets/icons/search-1.svg) no-repeat left;
+    background-size: 20px;
 }
 
 .titlebar > .titlebar-buttons {
@@ -61,8 +65,8 @@ body {
     color: var(--dracula-white);
     cursor: pointer;
     
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
@@ -355,6 +359,16 @@ a:hover {
 
 br {
     user-select: none;
+}
+
+.filter-white {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(333deg) brightness(106%) contrast(101%);
+}
+
+#logo {
+    width: 36px;
+    height: 36px;
+    margin: 0 10px;
 }
 
 .no-select {
